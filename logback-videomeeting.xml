@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<contextName>videomeeting</contextName>
+	
+	<jmxConfigurator contextName="videomeeting" />
+
+	<appender name="VIDEOMEETING" class="ch.qos.logback.core.FileAppender">
+		<File>log/videomeeting.log</File>
+		<Append>false</Append>
+		<Encoding>UTF-8</Encoding>
+		<BufferedIO>false</BufferedIO>
+		<ImmediateFlush>true</ImmediateFlush>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%date [%thread] %-5level %logger{35} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+	
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="VIDEOMEETING" />
+	</root>
+	
+	<logger name="org.red5.webels.videomeeting">
+		<level value="DEBUG" />
+	</logger>
+<!--	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+              <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+      </appender>
+
+    <root level="debug">
+      <appender-ref ref="STDOUT" />
+    </root>
+-->
+</configuration>
